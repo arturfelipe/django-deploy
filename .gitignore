@@ -56,3 +56,5 @@ gshow/junit_out.xml
 # Macvim
 .ropeproject
 .ropeproject/*
+
+*.sqlite3
