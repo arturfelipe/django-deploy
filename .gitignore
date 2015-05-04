@@ -1,0 +1,58 @@
+# Byte-compiled
+__pycache__/
+*.py[cod]
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+env/
+build/
+develop-eggs/
+dist/
+eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Editors
+*.swp
+*.swo
+
+# MacOS
+.DS_Store
+._*
+
+# Client
+node_modules/
+.sass-cache/
+npm-debug.log
+.module-cache
+bower_components/
+.grunt/
+_SpecRunner.html
+
+# Other
+*.log
+.env
+
+# Tests
+.coverage
+coverage/
+/coverage.xml
+gshow/coverage.xml
+gshow/junit_out.xml
+
+# Maps
+*.js.map
+*.css.map
+
+# Macvim
+.ropeproject
+.ropeproject/*
