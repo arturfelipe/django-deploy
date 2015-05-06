@@ -30,3 +30,45 @@ make install
 make run
 ```
 
+# Config server
+
+In this example we are using an ubuntu instance hosted at AWS to serve our app,
+follow the steps below to install same basics:
+
+```
+chmod 400 ~/.ssh/django_deploy.pem
+ssh -i ~/.ssh/django_deploy.pem ubuntu@52.24.9.189
+```
+
+#### Update apt-get
+```
+sudo apt-get update && sudo apt-get upgrade
+```
+
+#### Install git
+```
+sudo apt-get install git
+```
+
+#### Install nginx
+```
+sudo apt-get install nginx
+```
+
+#### Install python essentials
+```
+sudo apt-get install python-pip python-dev build-essential
+sudo apt-get install libcurl4-openssl-dev
+```
+
+#### Install virtualenv
+```
+sudo pip install virtualenv
+```
+
+#### Create files structure in the server
+```
+fab prod create_project_structure
+fab prod upload
+fab prod install_requirements
+```
