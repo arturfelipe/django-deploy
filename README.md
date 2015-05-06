@@ -1,7 +1,7 @@
 # django-deploy
 
 Django Deploy is a project created to demonstrate some basic concepts of how to
-deploy a Django project to a production server.
+deploy and serve a Django project in a production enviroment.
 
 You can fork the project and customize it for your needs. Fell free to send any
 comments, questions, suggestions or pull requests.
