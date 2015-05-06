@@ -58,3 +58,4 @@ gshow/junit_out.xml
 .ropeproject/*
 
 *.sqlite3
+.venv

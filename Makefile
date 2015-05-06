@@ -12,7 +12,7 @@ help:
 	@echo ''
 	@echo 'Usage:'
 	@echo ''
-	@echo 'make <task>'
+	@echo '  make <task>'
 	@echo ''
 	@echo 'Tasks avaiable:'
 	@echo '  clean                             Remove arquivos .pyc'
@@ -31,3 +31,8 @@ help:
 clean:
 	@echo 'Cleaning *.pyc ...'
 	@find . -name '*.pyc' -exec rm -rf {} \;
+
+create_env:
+	@echo 'Creating virtualenv...'
+	@rm -rf .venv
+	@virtualenv -p python2.7 --unzip-setuptools .venv
