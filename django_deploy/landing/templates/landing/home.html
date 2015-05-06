@@ -51,7 +51,7 @@
                         <a href="#page-top"></a>
                     </li>
                     <li class="page-scroll">
-                        <a href="#portfolio">Portfolio</a>
+                        <a href="#portfolio">Technologies</a>
                     </li>
                     <li class="page-scroll">
                         <a href="#about">About</a>
@@ -71,11 +71,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <img class="img-responsive" src="{% static 'landing/img/profile.png' %}" alt="">
                     <div class="intro-text">
-                        <span class="name">Start Bootstrap</span>
+                        <span class="name">Django Deploy</span>
                         <hr class="star-light">
-                        <span class="skills">Web Developer - Graphic Artist - User Experience Designer</span>
+                        <span class="skills">
+                          This is a project made to show some basic concepts of how
+                          to deploy a Django project to a production enviroment.
+                        </span>
                     </div>
                 </div>
             </div>
@@ -87,11 +89,21 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2>Portfolio</h2>
+                    <h2>Technologies</h2>
                     <hr class="star-primary">
                 </div>
             </div>
             <div class="row">
+                <div class="col-sm-4 portfolio-item">
+                    <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="{% static 'landing/img/technologies/logo-ubuntu.png' %}" class="img-responsive" alt="">
+                    </a>
+                </div>
                 <div class="col-sm-4 portfolio-item">
                     <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
                         <div class="caption">
@@ -99,7 +111,7 @@
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="{% static 'landing/img/portfolio/cabin.png' %}" class="img-responsive" alt="">
+                        <img src="{% static 'landing/img/technologies/logo-django.png' %}" class="img-responsive" alt="">
                     </a>
                 </div>
                 <div class="col-sm-4 portfolio-item">
@@ -109,7 +121,7 @@
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="{% static 'landing/img/portfolio/cake.png' %}" class="img-responsive" alt="">
+                        <img src="{% static 'landing/img/technologies/logo-nginx.png' %}" class="img-responsive" alt="">
                     </a>
                 </div>
                 <div class="col-sm-4 portfolio-item">
@@ -119,27 +131,7 @@
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="{% static 'landing/img/portfolio/circus.png' %}" class="img-responsive" alt="">
-                    </a>
-                </div>
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="{% static 'landing/img/portfolio/game.png' %}" class="img-responsive" alt="">
-                    </a>
-                </div>
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal5" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="{% static 'landing/img/portfolio/safe.png' %}" class="img-responsive" alt="">
+                        <img src="{% static 'landing/img/technologies/logo-gunicorn.png' %}" class="img-responsive" alt="">
                     </a>
                 </div>
                 <div class="col-sm-4 portfolio-item">
@@ -149,7 +141,17 @@
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="{% static 'landing/img/portfolio/submarine.png' %}" class="img-responsive" alt="">
+                        <img src="{% static 'landing/img/technologies/logo-fabric.png' %}" class="img-responsive" alt="">
+                    </a>
+                </div>
+                <div class="col-sm-4 portfolio-item">
+                    <a href="#portfolioModal5" class="portfolio-link" data-toggle="modal">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="{% static 'landing/img/technologies/logo-supervisord.gif' %}" class="img-responsive" alt="">
                     </a>
                 </div>
             </div>
