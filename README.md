@@ -8,7 +8,7 @@ comments, questions, suggestions or pull requests.
 
 # Install
 
-To install the project an see it running locally, follow the steps below:
+To install the project and see it running locally, follow the steps below:
 
 * Clone the project to a folder of your needs
 
@@ -23,5 +23,10 @@ you don't have virtualenv installed run:
 pip install virtualenv
 ```
 
-* There's a Makefile in the project that helps you to :
+* There's a Makefile in the project that helps you to setup:
+
+```
+make install
+make run
+```
 
