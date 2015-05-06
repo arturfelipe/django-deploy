@@ -1,6 +1,8 @@
 # coding: utf-8
-from django.http import HttpResponse
+from django.shortcuts import render
 
 
 def home(request):
-    return HttpResponse('My landing page')
+    '''Index page'''
+    context = {}
+    return render(request, 'landing/home.html', context)
