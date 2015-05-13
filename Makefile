@@ -43,7 +43,7 @@ create_env:
 
 install_requirements:
 	@echo 'Installing python requirements...'
-	@source .venv/bin/activate && pip install -Ur requirements_local.txt
+	@source .venv/bin/activate && pip install -Ur requirements-local.txt
 
 create_db:
 	@echo 'Creating db...'
