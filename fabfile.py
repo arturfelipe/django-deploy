@@ -16,9 +16,9 @@ APP_CURRENT_PATH = PROJECT_PATH + '/{}'.format(PROJECT_NAME)
 @task
 def prod():
     '''Prod enviroment'''
-    env.hosts = ['52.24.9.189']
-    env.user = 'ubuntu'
-    env.key_filename = '~/.ssh/django_deploy.pem'
+    env.hosts = [config('PROD_HOST', '')]
+    env.user = config('PROD_USER', '')
+    env.key_filename = config('PROD_KEY_FILENAME', '')
 
 
 def pgreen(str):
@@ -29,7 +29,7 @@ def pgreen(str):
 @contextmanager
 def venv():
     '''
-    Runs commands within the project's virtualenv
+    Run commands within the project's virtualenv
     '''
     with cd(VENV_PATH):
         with prefix('source {}/bin/activate'.format(VENV_PATH)):
@@ -39,7 +39,7 @@ def venv():
 @contextmanager
 def app():
     '''
-    Runs commands within the app's directory.
+    Run commands within the app's directory.
     '''
     with venv():
         with cd(APP_PATH):
@@ -49,7 +49,7 @@ def app():
 @contextmanager
 def app_current():
     '''
-    Runs commands within the app's current directory.
+    Run commands within the app's current directory.
     '''
     with venv():
         with cd(APP_CURRENT_PATH):
@@ -58,12 +58,22 @@ def app_current():
 
 @task
 def create_project_structure():
+    '''
+    Create the folders and initial files to place the project.
+    '''
     pgreen('Creating directory structure in {}...'.format(PROJECT_PATH))
     sudo('mkdir -p {}/{{logs,conf,media,static}}'.format(PROJECT_PATH))
 
     sudo('touch {}/logs/{{gunicorn.log,gunicorn_error.log,nginx-access.log,nginx-error.log}}'.format(PROJECT_PATH))
     sudo('touch {}/conf/env.conf'.format(PROJECT_PATH))
 
+
+@task
+def create_virtualenv():
+    '''
+    Create a virtualenv in the right path.
+    '''
+    pgreen('Creating virtualenv in {}...'.format(VENV_PATH))
     sudo('virtualenv {} --distribute --unzip-setuptools'.format(VENV_PATH))
 
 
@@ -80,6 +90,7 @@ def upload():
     with app():
         sudo('rm -rf {}'.format(PROJECT_NAME))
         sudo('mv /tmp/{} ./'.format(PROJECT_NAME))
+        sudo('ln -s {}/conf/env.conf ./{}/.env'.format(PROJECT_PATH, PROJECT_NAME))
 
 
 @task
@@ -100,6 +111,19 @@ def restart_supervisor():
     pgreen('Restarting supervisor...')
     with venv():
         sudo('supervisorctl restart all')
+
+
+@task
+def restart_nginx():
+    pgreen('Restarting nginx...')
+    with venv():
+        sudo('service nginx restart')
+
+
+@task
+def restart_all():
+    restart_supervisor()
+    restart_nginx()
 
 
 @task

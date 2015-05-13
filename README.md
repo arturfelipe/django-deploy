@@ -66,9 +66,10 @@ sudo apt-get install libcurl4-openssl-dev
 sudo pip install virtualenv
 ```
 
-#### Create files structure in the server
+#### Setup enviroment
 ```
 fab prod create_project_structure
+fab prod create_virtualenv
 fab prod upload
 fab prod install_requirements
 ```
