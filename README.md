@@ -73,3 +73,21 @@ fab prod create_virtualenv
 fab prod upload
 fab prod install_requirements
 ```
+
+#### Config Nginx
+Change the `nginx.conf` file at `/etc/nginx/nginx.conf` to the contents of
+`conf/nginx.conf`.
+
+Restart nginx:
+```
+sudo service nginx restart
+```
+
+#### Config Supervisor
+Place the `conf/supervisord.conf` to the `/etc/` server folder.
+
+And start supervisoring (your viirtualenv must be activated):
+
+```
+supervisord -c /etc/supervisord.conf
+```
