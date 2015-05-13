@@ -83,6 +83,15 @@ Restart nginx:
 sudo service nginx restart
 ```
 
+#### Config Gunicorn
+Copy the `conf/gunicorn.sh` to your conf server dir (/var/webapps/django_deploy/conf/).
+
+Make it executable:
+
+```
+chmod +x /var/webapps/django_deploy/conf/gunicorn.sh
+```
+
 #### Config Supervisor
 Place the `conf/supervisord.conf` to the `/etc/` server folder.
 
@@ -91,3 +100,15 @@ And start supervisoring (your viirtualenv must be activated):
 ```
 supervisord -c /etc/supervisord.conf
 ```
+
+Some basic commands:
+
+```
+supervisorctl reread
+supervisorctl reload
+
+supervisorctl start all
+supervisorctl stop all
+supervisorctl restart all
+```
+
